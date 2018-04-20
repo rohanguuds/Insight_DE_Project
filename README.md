@@ -25,7 +25,7 @@ This can be used by any company who does digital advertising.
 
 
 
-![architecture](users/rohan/Downloads/Architecture.png)
+![architecture](/users/rohan/Downloads/Architecture.png)
 
 1.
 1.
