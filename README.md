@@ -28,4 +28,19 @@ This can be used by any company who does digital advertising.
 ![architecture](https://github.com/rohanguuds/Insight_DE_Project/blob/master/pipeline.png)
 
 
+# Dataset:
+
+I will simulate the user data.
+
+raw e.g
+
+
+{"ts":"3:34:49.000","userID":"Andreana","sessioID":"Drivers","level":"A","location":"Maryland","ip_address":"228.25.186.212"},
+{"ts":"20:19:23.000","userID":"Miles","sessioID":"Twohig","level":"C","location":"Colorado","ip_address":"233.126.140.130"},
+{"ts":"23:31:55.000","userID":"Jerry","sessioID":"Okell","level":"B","location":"Alaska","ip_address":"167.21.149.227"},
+{"ts":"15:21:37.000","userID":"Zea","sessioID":"Cortez","level":"A","location":"Pennsylvania","ip_address":"237.88.216.46"},
+{"ts":"0:52:25.000","userID":"Guinna","sessioID":"Lesurf","level":"B","location":"Texas","ip_address":"33.231.189.159"},
+{"ts":"19:37:40.000","userID":"Chase","sessioID":"Jandl","level":"A","location":"New York","ip_address":"223.78.12.197"}
+
+
 
