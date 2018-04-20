@@ -25,7 +25,7 @@ This can be used by any company who does digital advertising.
 
 
 
-![architecture](/users/rohan/Downloads/Architecture)
+![architecture](https://github.com/rohanguuds/Insight_DE_Project/blob/master/pipeline.png)
 
 
 
