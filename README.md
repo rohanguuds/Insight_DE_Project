@@ -24,9 +24,7 @@ This can be used by any company who does digital advertising.
 
 - as of now, the simulated data and end result will involve aggregation and displaying results. I am trying to find out a way to put another layer of data to compare with existing data and introduce some kind of join operation
 
-# Why would a Data Engineering Hiring Manager care about this project?
 
-- this project will show my capability of using various industry standard tools to study the most basic problem companies try to solve, i.e generate revenue by advertising product and identify reasons to increase product value
 
 
 ![architecture](https://github.com/rohanguuds/Insight_DE_Project/blob/master/pipeline.png)
