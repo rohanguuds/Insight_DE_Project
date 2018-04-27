@@ -20,6 +20,13 @@ This can be used by any company who does digital advertising.
 - Processing: Hadoop Mapreduce, Spark
 - Database: Cassandra, may be HBase
 
+# What are the primary engineering challenges? 
+
+# Why would a Data Engineering Hiring Manager care about this project
+
+# What are the (quantitative) specifications/constraints for this project?
+
+
 # Proposed architecture?
 
 
