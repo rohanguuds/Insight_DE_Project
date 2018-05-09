@@ -10,7 +10,7 @@
 
 
 
-![architecture](https://github.com/rohanguuds/Insight_DE_Project/blob/master/pipeline.png)
+![architecture](https://github.com/rohanguuds/Insight_DE_Project/blob/master/DataPipeline.png)
 
 
 # Dataset:
