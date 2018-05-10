@@ -1,0 +1,5 @@
+
+HDFS_PATH=
+KEYSPACE='oilwell'
+CASSANDRA_TABLE='oil_production'
+KAFKA_BROKERS=
