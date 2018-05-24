@@ -6,9 +6,6 @@ import sh
  
 
 def main():
-    #hdfs_path = config.HDFS_PATH
-    hdfs_list_cmd = 'hadoop fs -ls ' + config.HDFS_PATH
-    #files = os.system(hdfs_list_cmd)
     files =  [ line.rsplit(None,1)[-1] for line in sh.hdfs('dfs','-ls',config.HDFS_PATH).split('\n') if len(line.rsplit(None,1))][1:]
     spark = SparkSession.builder.appName("batch_processing").config("spark.cassandra.connection.host","127.0.0.1").getOrCreate()
     df = spark.read.json(config.HDFS_PATH)
