@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from kafka import KafkaProducer
 import config
 import random
@@ -33,3 +35,16 @@ def main():
             pressure_1 = random.randint(720,725)
             pressure_2 = random.randint(900, 950)
             pressure_3 = random.randint(685, 691)
+            pressure_4 = random.randint(350, 400)
+        well_name = 'stream'
+        message_info = '{"id": "%d", "time": "%s", "well_name": "%s", "pressure_1": "%d", "pressure_2": "%d", "pressure_3": "%d", "pressure_4": "%d"}' \
+                       % (count, time_field, well_name, pressure_1, pressure_2, pressure_3, pressure_4)
+        print(message_info)
+        producer.send('rtpressure', message_info.encode('utf-8'))
+
+    producer.flush()
+    return
+
+
+if __name__ == '__main__':
+    main()
