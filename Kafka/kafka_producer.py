@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 from kafka import KafkaProducer
 import json
