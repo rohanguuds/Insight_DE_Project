@@ -37,7 +37,7 @@ def sendPartition(iter):
     cassandra_cluster.shutdown()
 
 def main():
-    sc = SparkContext(appName="campaign_stream_processing")
+    sc = SparkContext(appName="oil_stream_processing")
     sc.setLogLevel("WARN")
 
     ssc = StreamingContext(sc, 1)
