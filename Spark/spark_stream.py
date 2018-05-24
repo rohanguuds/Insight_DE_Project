@@ -28,8 +28,7 @@ def sendPartition(iter):
     cassandra_session = cassandra_cluster.connect('oilwell')
 
     for record in iter.collect():
-        dt = str(record[1])
-        sql_statement ="INSERT INTO well_pressure (id, dt, well_name, pressure_1, pressure_2, pressure_3, pressure_4 ) VALUES (%d, \' %s \', \'%s\', %d, %d, %d, %d);" %  (int(record[0]), dt, str(record[2]), int(record[3]), int(record[4]), int(record[5]), int(record[6]))
+        sql_statement ="INSERT INTO well_pressure (id, dt, well_name, pressure_1, pressure_2, pressure_3, pressure_4 ) VALUES (%d, \' %s \', \'%s\', %d, %d, %d, %d);" %  (int(record[0]), str(record[1]), str(record[2]), int(record[3]), int(record[4]), int(record[5]), int(record[6]))
 
         cassandra_session.execute(sql_statement)
         """
