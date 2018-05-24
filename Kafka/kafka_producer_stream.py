@@ -39,7 +39,7 @@ def main():
         well_name = 'stream'
         message_info = '{"id": "%d", "time": "%s", "well_name": "%s", "pressure_1": "%d", "pressure_2": "%d", "pressure_3": "%d", "pressure_4": "%d"}' \
                        % (count, time_field, well_name, pressure_1, pressure_2, pressure_3, pressure_4)
-        print(message_info)
+        
         producer.send('rtpressure', message_info.encode('utf-8'))
 
     producer.flush()
