@@ -14,7 +14,6 @@ from cassandra import ConsistencyLevel
 
 import config
 
-count =0
 def getSparkSessionInstance(sparkConf):
     if ("sparkSessionSingletonInstance" not in globals()):
         globals()["sparkSessionSingletonInstance"] = SparkSession \
