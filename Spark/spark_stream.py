@@ -40,7 +40,7 @@ def sendPartition(iter):
         if count % 300 == 0:
             cassandra_session.execute(batch)
             batch = BatchStatement(consistency_level=ConsistencyLevel.QUORUM)
-        # send the batch that is less than 500
+        # send the batch that is less than 300
     cassandra_session.execute(batch)
     cassandra_session.shutdown()
 
