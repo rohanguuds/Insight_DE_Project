@@ -8,7 +8,7 @@ import datetime
 
 def main():
     count = 0;
-    producer = KafkaProducer(bootstrap_servers=config.KAFKA_BROKERS)
+    producer = KafkaProducer(bootstrap_servers=config.KAFKA_BROKERS, linger_ms=5)
     flag = True
     while True:
         tm = datetime.datetime.now()
