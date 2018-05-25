@@ -24,17 +24,25 @@ def getSparkSessionInstance(sparkConf):
 
 
 def sendPartition(iter):
-    cassandra_cluster = Cluster(['54.71.115.97','35.166.209.97','35.166.89.248','34.218.167.77'])
+    cassandra_cluster = Cluster(['54.71.115.97', '35.166.209.97', '35.166.89.248', '34.218.167.77'])
     cassandra_session = cassandra_cluster.connect('oilwell')
+    insert_statement = cassandra_session.prepare(
+        "INSERT INTO well_pressure (id, dt, well_name, pressure_1, pressure_2, pressure_3, pressure_4) VALUES (?, ?, ?, ?, ?, ?, ?)")
+    count = 0
+    # batch insert into cassandra database
+    batch = BatchStatement(consistency_level=ConsistencyLevel.QUORUM)
 
     for record in iter.collect():
-        sql_statement ="INSERT INTO well_pressure (id, dt, well_name, pressure_1, pressure_2, pressure_3, pressure_4 ) VALUES (%d, \' %s \', \'%s\', %d, %d, %d, %d);" %  (int(record[0]), str(record[1]), str(record[2]), int(record[3]), int(record[4]), int(record[5]), int(record[6]))
-
-        cassandra_session.execute(sql_statement)
-        """
-        print ('Write into Canssandra success!')
-        """
-    cassandra_cluster.shutdown()
+        batch.add(insert_statement,
+                  (int(record[0]), str(record[1]), str(record[2]), int(record[3]), int(record[4]), int(record[5]), int(record[6])))
+        # split the batch, so that the batch will not exceed the size limit
+        count += 1
+        if count % 300 == 0:
+            cassandra_session.execute(batch)
+            batch = BatchStatement(consistency_level=ConsistencyLevel.QUORUM)
+        # send the batch that is less than 500
+    cassandra_session.execute(batch)
+    cassandra_session.shutdown()
 
 def main():
     sc = SparkContext(appName="oil_stream_processing")
