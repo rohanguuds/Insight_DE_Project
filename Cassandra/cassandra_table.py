@@ -12,4 +12,4 @@ cassandra_session.execute('CREATE TABLE oil_production (dt date, well_name text,
 cassandra_session.execute('DROP TABLE IF EXISTS monthly_oil;')
 cassandra_session.execute('CREATE TABLE monthly_oil (well_name text, month text, oil_avg float, PRIMARY KEY (well_name, month)) WITH CLUSTERING ORDER BY (month DESC);')
 cassandra_session.execute('DROP TABLE IF EXISTS well_pressure;')
-cassandra_session.execute('CREATE table well_pressure (id int, dt text, pressure_1 int, pressure_2 int, pressure_3 int, pressure_4 int, PRIMARY KEY(dt, id))WITH CLUSTERING ORDER BY (id ASC);')
+cassandra_session.execute(' CREATE table well_pressure (id int, well_name text, dt text, pressure_1 int, pressure_2 int, pressure_3 int, pressure_4 int, PRIMARY KEY(dt, id))WITH CLUSTERING ORDER BY (id ASC);')
